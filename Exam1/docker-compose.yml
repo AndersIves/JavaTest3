@@ -15,6 +15,17 @@ services:
     networks:
       - "c7nNetwork"
 
+    app: #服务名称（不是容器名）
+      container_name: app
+      hostname: app
+      image: app
+      ports:
+        - "8080:8080"
+      expose:
+        - "8080"
+      networks:
+        - "c7nNetwork"
+
 networks:
   c7nNetwork:
     driver: bridge
